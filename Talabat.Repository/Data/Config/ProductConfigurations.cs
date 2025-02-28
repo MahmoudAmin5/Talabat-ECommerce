@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Talabat.Core.Entities;
 
-namespace Talabat.Repository.Config
+namespace Talabat.Repository.Data.Config
 {
     internal class ProductConfigurations : IEntityTypeConfiguration<Product>
     {
@@ -30,7 +30,7 @@ namespace Talabat.Repository.Config
                 .HasForeignKey(p => p.BrandId);
             builder.HasOne(p => p.Category)
                 .WithMany()
-                .HasForeignKey(p=>p.CategoryId);
+                .HasForeignKey(p => p.CategoryId);
         }
     }
 }
