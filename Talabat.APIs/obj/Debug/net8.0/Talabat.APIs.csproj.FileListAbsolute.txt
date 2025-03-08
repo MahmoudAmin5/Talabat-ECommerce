@@ -74,3 +74,4 @@ D:\Talabat Project\Talabat.Solution\Talabat.APIs\bin\Debug\net8.0\Humanizer.dll
 D:\Talabat Project\Talabat.Solution\Talabat.APIs\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
 D:\Talabat Project\Talabat.Solution\Talabat.APIs\bin\Debug\net8.0\AutoMapper.dll
 D:\Talabat Project\Talabat.Solution\Talabat.APIs\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Talabat Project\Talabat.Solution\Talabat.APIs\bin\Debug\net8.0\Talabat.APIs.staticwebassets.runtime.json
