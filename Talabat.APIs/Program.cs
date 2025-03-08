@@ -1,5 +1,8 @@
 
 using Microsoft.EntityFrameworkCore;
+using Talabat.APIs.DTO;
+using Talabat.APIs.Helpers;
+using Talabat.Core.Entities;
 using Talabat.Core.Repository.Core;
 using Talabat.Repository;
 using Talabat.Repository.Data;
@@ -22,6 +25,7 @@ namespace Talabat.APIs
             builder.Services.AddDbContext<StoreContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
             builder.Services.AddScoped(typeof(IGenericRepository<>),typeof (GenericRepository<>));
+            builder.Services.AddAutoMapper(typeof(MappingProfile));
             #endregion
 
             var app = builder.Build();

@@ -9,7 +9,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Talabat.Core.Entities.Product, Talabat.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Talabat.APIs.DTO.ProductToReturnDto, Talabat.APIs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -35,7 +35,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Talabat.Core.Entities.Product",
+        "Type": "Talabat.APIs.DTO.ProductToReturnDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
