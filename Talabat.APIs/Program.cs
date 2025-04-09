@@ -5,6 +5,7 @@ using Microsoft.VisualBasic;
 using Talabat.APIs.DTO;
 using Talabat.APIs.Errors;
 using Talabat.APIs.Helpers;
+using Talabat.APIs.Middleware;
 using Talabat.Core.Entities;
 using Talabat.Core.Repository.Core;
 using Talabat.Repository;
@@ -65,11 +66,12 @@ namespace Talabat.APIs
             {
                 var logger = LoggerFactory.CreateLogger<Program>();
                 logger.LogError(ex, "An error has been happened during applying the migration");
-            } 
+            }
             #endregion
 
             // Configure the HTTP request pipeline.
             #region Kestrul Middelwares 
+            app.UseMiddleware<ExceptionMiddleware>();
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
