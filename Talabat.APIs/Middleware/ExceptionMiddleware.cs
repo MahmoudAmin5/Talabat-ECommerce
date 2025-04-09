@@ -21,7 +21,7 @@ namespace Talabat.APIs.Middleware
         {
             try
             {
-                await InvokeAsync(context);
+                await _next.Invoke(context);
             }
             catch (Exception ex)
             {
