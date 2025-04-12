@@ -22,7 +22,10 @@ namespace Talabat.Repository
                 query = query.OrderBy(spec.OrderByAsc);
             else if (spec.OrderByDesc is not null)
                 query = query.OrderByDescending(spec.OrderByDesc);
-            
+            if (spec.IsPaginationEnabled)
+            {
+                query=query.Skip(spec.Skip).Take(spec.Take);
+            }
             query =
                 spec.Includes.Aggregate(query, (Curr, IncludeExp) => Curr.Include(IncludeExp));
             return query;

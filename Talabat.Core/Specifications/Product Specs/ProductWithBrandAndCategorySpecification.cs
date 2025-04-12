@@ -40,7 +40,7 @@ namespace Talabat.Core.Product_Specs
             }
             else 
                 AddOrderByAsc(p=>p.Name);
-
+            ApplyPagination((specsParams.pageIndex - 1) * specsParams.pageSize, specsParams.pageSize);
         }
         public ProductWithBrandAndCategorySpecification(int id)
             :base(p=>p.Id==id)

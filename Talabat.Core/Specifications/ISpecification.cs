@@ -14,6 +14,9 @@ namespace Talabat.Core.Specifications
         public List<Expression<Func<T, Object>>> Includes { get; set; } // To handle Collections of BaseEntity
         public Expression<Func<T, object>> OrderByAsc { get; set; }
         public Expression<Func<T, object>> OrderByDesc { get; set; }
+        public int Take { get; set; }
+        public int Skip { get; set; }
+        public bool IsPaginationEnabled { get; set; }
 
 
     }
