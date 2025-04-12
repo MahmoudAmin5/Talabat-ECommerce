@@ -14,6 +14,7 @@ namespace Talabat.Core.Product_Specs
     {
         public ProductWithBrandAndCategorySpecification(ProductSpecsParams specsParams)
             :base(p=>
+                   (string.IsNullOrEmpty(specsParams.Search) || p.Name.ToLower().Contains(specsParams.Search))&&
                    (!specsParams.brandId.HasValue || p.BrandId == specsParams.brandId)&&
                    (!specsParams.categoryId.HasValue || p.CategoryId==specsParams.categoryId)
                  )
@@ -40,7 +41,7 @@ namespace Talabat.Core.Product_Specs
             }
             else 
                 AddOrderByAsc(p=>p.Name);
-            ApplyPagination((specsParams.pageIndex - 1) * specsParams.pageSize, specsParams.pageSize);
+            ApplyPagination((specsParams.pageIndex - 1) * specsParams.PageSize, specsParams.PageSize);
         }
         public ProductWithBrandAndCategorySpecification(int id)
             :base(p=>p.Id==id)

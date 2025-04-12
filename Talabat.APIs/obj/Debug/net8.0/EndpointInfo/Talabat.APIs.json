@@ -49,6 +49,13 @@
               "type": "integer",
               "format": "int32"
             }
+          },
+          {
+            "name": "Search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
