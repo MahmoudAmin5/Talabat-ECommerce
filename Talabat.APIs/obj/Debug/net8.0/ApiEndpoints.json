@@ -35,7 +35,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IReadOnlyList\u00601[[Talabat.APIs.DTO.ProductToReturnDto, Talabat.APIs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Talabat.APIs.Helpers.Pagination\u00601[[Talabat.APIs.DTO.ProductToReturnDto, Talabat.APIs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
