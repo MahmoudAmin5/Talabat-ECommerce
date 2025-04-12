@@ -21,7 +21,7 @@ namespace Talabat.Repository
         }
 
         #region Wihout Specifications 
-        public async Task<IEnumerable<T>> GetAllAsync()
+        public async Task<IReadOnlyList<T>> GetAllAsync()
         {
             return await _dbcontext.Set<T>().ToListAsync();
         }
@@ -38,7 +38,7 @@ namespace Talabat.Repository
             return
                await ApplySpecifications(spec).AsNoTracking().FirstOrDefaultAsync();
         }
-        public async Task<IEnumerable<T>> GetAllWithSpecificationAsync(ISpecification<T> spec)
+        public async Task<IReadOnlyList<T>> GetAllWithSpecificationAsync(ISpecification<T> spec)
         {
             return
                 await ApplySpecifications(spec).AsNoTracking().ToListAsync();
@@ -50,5 +50,7 @@ namespace Talabat.Repository
             return 
                 SpecificationEvaluator<T>.GetQuery(_dbcontext.Set<T>(), spec);
         }
+
+       
     }
 }
