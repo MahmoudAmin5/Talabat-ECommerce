@@ -18,6 +18,11 @@ namespace Talabat.Repository
 
             if (spec.Criteria is not null)
                 query = query.Where(spec.Criteria); //dbset<Product>().Where(p=>p.id==id)
+            if (spec.OrderByAsc is not null)
+                query = query.OrderBy(spec.OrderByAsc);
+            else if (spec.OrderByDesc is not null)
+                query = query.OrderByDescending(spec.OrderByDesc);
+            
             query =
                 spec.Includes.Aggregate(query, (Curr, IncludeExp) => Curr.Include(IncludeExp));
 

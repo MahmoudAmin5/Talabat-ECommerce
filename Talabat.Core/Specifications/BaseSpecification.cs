@@ -13,12 +13,22 @@ namespace Talabat.Core.Specifications
     {
         public Expression<Func<T, bool>>? Criteria { get; set; } // Null
         public List<Expression<Func<T, object>>> Includes { get; set; } = new List<Expression<Func<T, object>>>();
-        
+        public Expression<Func<T, object>> OrderByAsc { get; set ; }
+        public Expression<Func<T, object>> OrderByDesc { get ; set ; }
+
         public BaseSpecification() { } // Get All
 
         public BaseSpecification(Expression<Func<T,bool>> expressionCriteria) // Get By Id
         {
             Criteria = expressionCriteria;
+        }
+        public void AddOrderByAsc(Expression<Func<T,Object>> OrderExpression)
+        {
+            OrderByAsc = OrderExpression;
+        }
+        public void AddOrderByDesc(Expression<Func<T, Object>> OrderDescExpression)
+        {
+            OrderByDesc = OrderDescExpression;
         }
 
     }

@@ -7,6 +7,7 @@ using Talabat.Core.Entities;
 using Talabat.Core.Product_Specs;
 using Talabat.Core.Repository.Core;
 using Talabat.Core.Specifications;
+using Talabat.Core.Specifications.Product_Specs;
 
 namespace Talabat.APIs.Controllers
 {
@@ -30,12 +31,12 @@ namespace Talabat.APIs.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProductToReturnDto>>> GetProducts()
+        public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetProducts([FromQuery]ProductSpecsParams specsParams )
         {
-            var spec = new ProductWithBrandAndCategorySpecification();
+            var spec = new ProductWithBrandAndCategorySpecification(specsParams);
             var products = await _productRepository.GetAllWithSpecificationAsync(spec);
 
-            return Ok (_mapper.Map<IEnumerable<Product>,IEnumerable<ProductToReturnDto>>(products));
+            return Ok (_mapper.Map<IReadOnlyList<Product>,IReadOnlyList<ProductToReturnDto>>(products));
         }
         [HttpGet("{id}")]
         public async Task<ActionResult<ProductToReturnDto>> GetProduct(int id)
