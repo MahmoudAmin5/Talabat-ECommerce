@@ -25,8 +25,6 @@ namespace Talabat.Repository
             
             query =
                 spec.Includes.Aggregate(query, (Curr, IncludeExp) => Curr.Include(IncludeExp));
-
-
             return query;
 
         }
