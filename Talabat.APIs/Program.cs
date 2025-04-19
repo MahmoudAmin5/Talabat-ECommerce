@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
+using StackExchange.Redis;
 using Talabat.APIs.DTO;
 using Talabat.APIs.Errors;
 using Talabat.APIs.Helpers;
@@ -45,6 +46,11 @@ namespace Talabat.APIs
                     };
                     return new BadRequestObjectResult(Response);
                 };
+            });
+            builder.Services.AddSingleton<IConnectionMultiplexer>(options=>
+            {
+                var connection = builder.Configuration.GetConnectionString("RedisConnection");
+                return ConnectionMultiplexer.Connect(connection);
             });
             #endregion
 
