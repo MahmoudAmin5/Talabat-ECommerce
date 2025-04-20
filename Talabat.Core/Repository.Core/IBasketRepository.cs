@@ -11,7 +11,7 @@ namespace Talabat.Core.Repository.Core
     {
         public Task<CustomerBasket?> GetBasketAsync(string BasketId);
         public Task<CustomerBasket?> UpdateBasketAsync(CustomerBasket Basket);
-        public Task<bool> DeleteBasket(string BasketId);
+        public Task<bool> DeleteBasketAsync(string BasketId);
 
     }
 }

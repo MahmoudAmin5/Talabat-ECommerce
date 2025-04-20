@@ -19,7 +19,7 @@ namespace Talabat.Repository
             _database = rides.GetDatabase();
         }
 
-        public async Task<bool> DeleteBasket(string BasketId)
+        public async Task<bool> DeleteBasketAsync(string BasketId)
         {
             return await _database.KeyDeleteAsync(BasketId);
         }

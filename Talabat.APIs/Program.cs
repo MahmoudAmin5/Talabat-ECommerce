@@ -52,6 +52,7 @@ namespace Talabat.APIs
                 var connection = builder.Configuration.GetConnectionString("RedisConnection");
                 return ConnectionMultiplexer.Connect(connection);
             });
+            builder.Services.AddScoped(typeof(IBasketRepository), typeof(BasketRepository));
             #endregion
 
             var app = builder.Build();
