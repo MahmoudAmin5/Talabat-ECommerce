@@ -8,9 +8,11 @@ using Talabat.APIs.Errors;
 using Talabat.APIs.Helpers;
 using Talabat.APIs.Middleware;
 using Talabat.Core.Entities;
+using Talabat.Core.Entities.Identity;
 using Talabat.Core.Repository.Core;
 using Talabat.Repository;
 using Talabat.Repository.Data;
+using Talabat.Repository.Identity;
 
 namespace Talabat.APIs
 {
@@ -29,6 +31,11 @@ namespace Talabat.APIs
             builder.Services.AddSwaggerGen();
             builder.Services.AddDbContext<StoreContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Services.AddDbContext<AppIdentityDbContext>(options => 
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection"));
+            
+            });
             builder.Services.AddScoped(typeof(IGenericRepository<>),typeof (GenericRepository<>));
             builder.Services.AddAutoMapper(typeof(MappingProfile));
             builder.Services.Configure<ApiBehaviorOptions>(options =>
@@ -67,6 +74,8 @@ namespace Talabat.APIs
             try
             {
                 await _dbcontext.Database.MigrateAsync();
+                var IdentityDbContext = services.GetRequiredService<AppIdentityDbContext>();
+                await IdentityDbContext.Database.MigrateAsync();
                 await StoreContextSeed.SeedAsync(_dbcontext); // Data Seeding 
             }
             catch (Exception ex)
