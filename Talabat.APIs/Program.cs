@@ -1,4 +1,5 @@
 
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
@@ -60,6 +61,9 @@ namespace Talabat.APIs
                 return ConnectionMultiplexer.Connect(connection);
             });
             builder.Services.AddScoped(typeof(IBasketRepository), typeof(BasketRepository));
+            builder.Services.AddIdentity<AppUser, IdentityRole>()
+                                   .AddEntityFrameworkStores<AppIdentityDbContext>();
+            builder.Services.AddAuthentication();
             #endregion
 
             var app = builder.Build();
@@ -76,7 +80,9 @@ namespace Talabat.APIs
                 await _dbcontext.Database.MigrateAsync();
                 var IdentityDbContext = services.GetRequiredService<AppIdentityDbContext>();
                 await IdentityDbContext.Database.MigrateAsync();
-                await StoreContextSeed.SeedAsync(_dbcontext); // Data Seeding 
+                await StoreContextSeed.SeedAsync(_dbcontext); // Data Seeding
+                var userManager = services.GetRequiredService<UserManager<AppUser>>();
+                await AppIdentityDbContextSeed.SeedUserAsync(userManager);
             }
             catch (Exception ex)
             {
