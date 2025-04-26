@@ -1,4 +1,6 @@
 
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -11,9 +13,11 @@ using Talabat.APIs.Middleware;
 using Talabat.Core.Entities;
 using Talabat.Core.Entities.Identity;
 using Talabat.Core.Repository.Core;
+using Talabat.Core.Services.Core;
 using Talabat.Repository;
 using Talabat.Repository.Data;
 using Talabat.Repository.Identity;
+using Talabat.Service;
 
 namespace Talabat.APIs
 {
@@ -61,9 +65,11 @@ namespace Talabat.APIs
                 return ConnectionMultiplexer.Connect(connection);
             });
             builder.Services.AddScoped(typeof(IBasketRepository), typeof(BasketRepository));
+            builder.Services.AddScoped(typeof(ITokenService), typeof(TokenService));
             builder.Services.AddIdentity<AppUser, IdentityRole>()
                                    .AddEntityFrameworkStores<AppIdentityDbContext>();
-            builder.Services.AddAuthentication();
+            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer();
             #endregion
 
             var app = builder.Build();
