@@ -53,6 +53,54 @@
         }
       }
     },
+    "/api/Account/register": {
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Basket/{BasketId}": {
       "get": {
         "tags": [
@@ -568,6 +616,35 @@
               "$ref": "#/components/schemas/ProductToReturnDto"
             },
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegisterDto": {
+        "required": [
+          "displayName",
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "displayName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "email": {
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "minLength": 1,
+            "pattern": "(?=^.{6,10}$)(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\\s).*$",
+            "type": "string"
           }
         },
         "additionalProperties": false

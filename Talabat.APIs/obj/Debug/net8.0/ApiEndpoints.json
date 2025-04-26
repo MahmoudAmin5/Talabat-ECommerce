@@ -26,6 +26,32 @@
     ]
   },
   {
+    "ContainingType": "Talabat.APIs.Controllers.AccountController",
+    "Method": "Register",
+    "RelativePath": "api/Account/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registerDto",
+        "Type": "Talabat.APIs.DTO.RegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Talabat.APIs.DTO.UserDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "Talabat.APIs.Controllers.BasketController",
     "Method": "UpdateBasket",
     "RelativePath": "api/Basket",
