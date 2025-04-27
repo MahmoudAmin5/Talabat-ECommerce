@@ -4,8 +4,11 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.VisualBasic;
 using StackExchange.Redis;
+using System.Text;
 using Talabat.APIs.DTO;
 using Talabat.APIs.Errors;
 using Talabat.APIs.Helpers;
@@ -68,8 +71,24 @@ namespace Talabat.APIs
             builder.Services.AddScoped(typeof(ITokenService), typeof(TokenService));
             builder.Services.AddIdentity<AppUser, IdentityRole>()
                                    .AddEntityFrameworkStores<AppIdentityDbContext>();
-            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer();
+            builder.Services.AddAuthentication(/*JwtBearerDefaults.AuthenticationScheme*/ Options =>
+            {
+                Options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                Options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters()
+                    {
+                        ValidateIssuer = true,
+                        ValidIssuer = builder.Configuration["JWT:ValidIssuer"],
+                        ValidateAudience = true,
+                        ValidAudience = builder.Configuration["JWT:ValidAudience"],
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Key"])),
+                        ValidateLifetime = true,
+                    };
+                });
             #endregion
 
             var app = builder.Build();
@@ -108,9 +127,10 @@ namespace Talabat.APIs
             app.UseStatusCodePagesWithReExecute("/error/{0}");
 
             app.UseHttpsRedirection();
-
-            app.UseAuthorization();
             app.UseStaticFiles();
+            app.UseAuthentication();
+            app.UseAuthorization();
+            
 
             app.MapControllers();
 
