@@ -80,7 +80,7 @@ namespace Talabat.APIs.Controllers
         }
         [HttpGet("Address")]
         [Authorize]
-        public async Task<ActionResult<Address>> GetUserAddress()
+        public async Task<ActionResult<AddressDto>> GetUserAddress()
         {
             var userWithAddress =  await _userManager.FindUserWithAddressByEmailAsync(User);
             return Ok(_mapper.Map<Address, AddressDto>(userWithAddress.Address));
