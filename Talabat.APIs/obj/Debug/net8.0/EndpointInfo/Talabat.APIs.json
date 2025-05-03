@@ -291,17 +291,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CustomerBasket"
+                "$ref": "#/components/schemas/CustomerBasketDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CustomerBasket"
+                "$ref": "#/components/schemas/CustomerBasketDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CustomerBasket"
+                "$ref": "#/components/schemas/CustomerBasketDto"
               }
             }
           }
@@ -668,6 +668,52 @@
         },
         "additionalProperties": false
       },
+      "BasketItemDto": {
+        "required": [
+          "brand",
+          "id",
+          "pictureURL",
+          "price",
+          "productName",
+          "quantity",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "productName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "pictureURL": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "brand": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "price": {
+            "minimum": 0.1,
+            "type": "number",
+            "format": "double"
+          },
+          "quantity": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "CustomerBasket": {
         "type": "object",
         "properties": {
@@ -679,6 +725,26 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/BasketItem"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CustomerBasketDto": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BasketItemDto"
             },
             "nullable": true
           }

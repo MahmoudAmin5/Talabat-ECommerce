@@ -153,7 +153,7 @@
     "Parameters": [
       {
         "Name": "Basket",
-        "Type": "Talabat.Core.Entities.CustomerBasket",
+        "Type": "Talabat.APIs.DTO.CustomerBasketDto",
         "IsRequired": true
       }
     ],
