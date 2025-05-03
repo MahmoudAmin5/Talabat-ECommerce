@@ -97,5 +97,10 @@ namespace Talabat.APIs.Controllers
             if (!Result.Succeeded) return BadRequest(new ApiResponse(400));
             return Ok(NewAddress);
         }
+        [HttpGet("EmailExists")]
+        public async Task<ActionResult<bool>> CheckEmailExistsAsync(string email)
+        {
+            return await _userManager.FindByEmailAsync(email) is not null; 
+        }
     }
 }

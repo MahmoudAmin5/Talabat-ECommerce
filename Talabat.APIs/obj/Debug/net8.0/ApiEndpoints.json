@@ -47,6 +47,32 @@
   },
   {
     "ContainingType": "Talabat.APIs.Controllers.AccountController",
+    "Method": "CheckEmailExistsAsync",
+    "RelativePath": "api/Account/EmailExists",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Talabat.APIs.Controllers.AccountController",
     "Method": "GetCurrentUser",
     "RelativePath": "api/Account/GetCurrentUser",
     "HttpMethod": "GET",
