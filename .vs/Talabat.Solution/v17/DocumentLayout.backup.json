@@ -19,6 +19,10 @@
       "RelativeMoniker": "D:0:0:{AD7E1FFB-2F2B-41C1-8786-96F1C0050D85}|Talabat.APIs\\Talabat.APIs.csproj|solutionrelative:talabat.apis\\controllers\\basketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{8B72C1C0-54C1-4501-890E-5E85E415D65E}|Talabat.Core\\Talabat.Core.csproj|d:\\talabat project\\talabat.solution\\talabat.core\\orderaggregate\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B72C1C0-54C1-4501-890E-5E85E415D65E}|Talabat.Core\\Talabat.Core.csproj|solutionrelative:talabat.core\\orderaggregate\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AD7E1FFB-2F2B-41C1-8786-96F1C0050D85}|Talabat.APIs\\Talabat.APIs.csproj|d:\\talabat project\\talabat.solution\\talabat.apis\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AD7E1FFB-2F2B-41C1-8786-96F1C0050D85}|Talabat.APIs\\Talabat.APIs.csproj|solutionrelative:talabat.apis\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -34,11 +38,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{26341fe2-71dd-46fd-bb1b-2e51a92a0d64}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Address.cs",
+              "DocumentMoniker": "D:\\Talabat Project\\Talabat.Solution\\Talabat.Core\\OrderAggregate\\Address.cs",
+              "RelativeDocumentMoniker": "Talabat.Core\\OrderAggregate\\Address.cs",
+              "ToolTip": "D:\\Talabat Project\\Talabat.Solution\\Talabat.Core\\OrderAggregate\\Address.cs",
+              "RelativeToolTip": "Talabat.Core\\OrderAggregate\\Address.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T15:44:05.318Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -48,7 +65,7 @@
               "RelativeDocumentMoniker": "Talabat.APIs\\Controllers\\BasketController.cs",
               "ToolTip": "D:\\Talabat Project\\Talabat.Solution\\Talabat.APIs\\Controllers\\BasketController.cs",
               "RelativeToolTip": "Talabat.APIs\\Controllers\\BasketController.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAA1wBwAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwBwAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-03T07:55:40.91Z",
               "EditorCaption": ""
@@ -94,7 +111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "AddressDto.cs",
               "DocumentMoniker": "D:\\Talabat Project\\Talabat.Solution\\Talabat.APIs\\DTO\\AddressDto.cs",
               "RelativeDocumentMoniker": "Talabat.APIs\\DTO\\AddressDto.cs",
@@ -106,7 +123,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "AccountController.cs",
               "DocumentMoniker": "D:\\Talabat Project\\Talabat.Solution\\Talabat.APIs\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Talabat.APIs\\Controllers\\AccountController.cs",
@@ -114,8 +131,7 @@
               "RelativeToolTip": "Talabat.APIs\\Controllers\\AccountController.cs",
               "ViewState": "AgIAAEEAAAAAAAAAAAAiwGYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T16:17:14.415Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-01T16:17:14.415Z"
             }
           ]
         }
