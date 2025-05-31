@@ -120,13 +120,7 @@ dotnet test
 
 **Author:** Mahmoud Amin
 **GitHub:** [@MahmoudAmin5](https://github.com/MahmoudAmin5)
-**Email:** [your-email@example.com](mailto:your-email@example.com)
-
----
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
+**Email:** [mahmoud886.amin@gmail.com](mahmoud886.amin@gmail.com)
 
 ---
 
@@ -135,9 +129,3 @@ This project is licensed under the [MIT License](LICENSE).
 Contributions, bug reports, and feature requests are welcome!
 Feel free to open an issue or submit a pull request.
 
-```
-
----
-
-Let me know if you'd like to add database diagrams, architecture visuals, or a Postman collection. I can generate those too.
-```
