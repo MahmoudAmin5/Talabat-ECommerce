@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Talabat Project\\Talabat.Solution\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0C093465-42FC-4C75-A2A0-ABE1BDA7D7FD}|Talabat.Repository\\Talabat.Repository.csproj|d:\\talabat project\\talabat.solution\\talabat.repository\\data\\config\\orderconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C093465-42FC-4C75-A2A0-ABE1BDA7D7FD}|Talabat.Repository\\Talabat.Repository.csproj|solutionrelative:talabat.repository\\data\\config\\orderconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8B72C1C0-54C1-4501-890E-5E85E415D65E}|Talabat.Core\\Talabat.Core.csproj|d:\\talabat project\\talabat.solution\\talabat.core\\orderaggregate\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8B72C1C0-54C1-4501-890E-5E85E415D65E}|Talabat.Core\\Talabat.Core.csproj|solutionrelative:talabat.core\\orderaggregate\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -31,6 +35,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "OrderConfigurations.cs",
+              "DocumentMoniker": "D:\\Talabat Project\\Talabat.Solution\\Talabat.Repository\\Data\\Config\\OrderConfigurations.cs",
+              "RelativeDocumentMoniker": "Talabat.Repository\\Data\\Config\\OrderConfigurations.cs",
+              "ToolTip": "D:\\Talabat Project\\Talabat.Solution\\Talabat.Repository\\Data\\Config\\OrderConfigurations.cs",
+              "RelativeToolTip": "Talabat.Repository\\Data\\Config\\OrderConfigurations.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T07:55:00.928Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Order.cs",
               "DocumentMoniker": "D:\\Talabat Project\\Talabat.Solution\\Talabat.Core\\OrderAggregate\\Order.cs",
               "RelativeDocumentMoniker": "Talabat.Core\\OrderAggregate\\Order.cs",
@@ -43,7 +60,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ProductItemOrdered.cs",
               "DocumentMoniker": "D:\\Talabat Project\\Talabat.Solution\\Talabat.Core\\OrderAggregate\\ProductItemOrdered.cs",
               "RelativeDocumentMoniker": "Talabat.Core\\OrderAggregate\\ProductItemOrdered.cs",
@@ -51,12 +68,11 @@
               "RelativeToolTip": "Talabat.Core\\OrderAggregate\\ProductItemOrdered.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T09:05:56.801Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-22T09:05:56.801Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "OrderItem.cs",
               "DocumentMoniker": "D:\\Talabat Project\\Talabat.Solution\\Talabat.Core\\OrderAggregate\\OrderItem.cs",
               "RelativeDocumentMoniker": "Talabat.Core\\OrderAggregate\\OrderItem.cs",
@@ -64,8 +80,7 @@
               "RelativeToolTip": "Talabat.Core\\OrderAggregate\\OrderItem.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T09:02:09.527Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-22T09:02:09.527Z"
             }
           ]
         }
