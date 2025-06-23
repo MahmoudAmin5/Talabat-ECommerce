@@ -60,7 +60,7 @@ Talabat-ECommerce/
 
 ### Prerequisites
 
-- [.NET 6 SDK](https://dotnet.microsoft.com/download)
+- [.NET 8 SDK](https://dotnet.microsoft.com/download)
 - SQL Server
 - Redis (local or cloud-based)
 - Stripe account (for payments)
