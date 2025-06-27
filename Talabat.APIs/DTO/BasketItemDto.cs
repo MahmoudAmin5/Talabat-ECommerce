@@ -6,14 +6,14 @@ namespace Talabat.APIs.DTO
     {
         [Required]
         public int Id { get; set; }
-        [Required]
-        public string ProductName { get; set; }
-        [Required]
-        public string PictureURL { get; set; }
-        [Required]
-        public string Brand { get; set; }
-        [Required]
-        public string Type { get; set; }
+
+        public required string ProductName { get; set; }
+   
+        public required string PictureURL { get; set; }
+        
+        public required string Brand { get; set; }
+       
+        public required string Type { get; set; }
         [Required]
         [Range(0.1, double.MaxValue , ErrorMessage = "Price must be greater than Zero !")]
         public decimal Price { get; set; }

@@ -10,10 +10,23 @@ namespace Talabat.Core.OrderAggregate
 {
     public class Order: BaseEntity
     {
-        public string BuyerName { get; set; }
+        public Order()
+        {
+            
+        }
+        public Order(string buyerName, Address shippingAddress, DeliveryMethod deliveryMethod, ICollection<OrderItem> items, decimal subTotal)
+        {
+            BuyerName = buyerName;
+            ShippingAddress = shippingAddress;
+            DeliveryMethod = deliveryMethod;
+            Items = items;
+            SubTotal = subTotal;
+        }
+
+        public required string BuyerName { get; set; }
         public DateTimeOffset OrderDate { get; set; } = DateTimeOffset.Now;
         public OrderStatus Status { get; set; } = OrderStatus.Pending;
-        public Address ShippingAddress { get; set; }
+        public required Address ShippingAddress { get; set; }
         public DeliveryMethod DeliveryMethod { get; set; }
         public ICollection<OrderItem> Items { get; set; } = new HashSet<OrderItem>();
         public decimal SubTotal { get; set; }

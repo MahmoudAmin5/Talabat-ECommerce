@@ -635,6 +635,12 @@
         "additionalProperties": false
       },
       "BasketItem": {
+        "required": [
+          "brand",
+          "pictureURL",
+          "productName",
+          "type"
+        ],
         "type": "object",
         "properties": {
           "id": {
@@ -685,20 +691,20 @@
             "format": "int32"
           },
           "productName": {
-            "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "pictureURL": {
-            "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "brand": {
-            "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "type": {
-            "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "price": {
             "minimum": 0.1,
