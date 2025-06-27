@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\Talabat Project\\Talabat.Solution\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0C093465-42FC-4C75-A2A0-ABE1BDA7D7FD}|Talabat.Repository\\Talabat.Repository.csproj|d:\\talabat project\\talabat.solution\\talabat.repository\\data\\storecontextseed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C093465-42FC-4C75-A2A0-ABE1BDA7D7FD}|Talabat.Repository\\Talabat.Repository.csproj|solutionrelative:talabat.repository\\data\\storecontextseed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8B72C1C0-54C1-4501-890E-5E85E415D65E}|Talabat.Core\\Talabat.Core.csproj|d:\\talabat project\\talabat.solution\\talabat.core\\services.core\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B72C1C0-54C1-4501-890E-5E85E415D65E}|Talabat.Core\\Talabat.Core.csproj|solutionrelative:talabat.core\\services.core\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "StoreContextSeed.cs",
-              "DocumentMoniker": "D:\\Talabat Project\\Talabat.Solution\\Talabat.Repository\\Data\\StoreContextSeed.cs",
-              "RelativeDocumentMoniker": "Talabat.Repository\\Data\\StoreContextSeed.cs",
-              "ToolTip": "D:\\Talabat Project\\Talabat.Solution\\Talabat.Repository\\Data\\StoreContextSeed.cs",
-              "RelativeToolTip": "Talabat.Repository\\Data\\StoreContextSeed.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAswE4AAAAAAAAAAAAAAA==",
+              "Title": "IOrderService.cs",
+              "DocumentMoniker": "D:\\Talabat Project\\Talabat.Solution\\Talabat.Core\\Services.Core\\IOrderService.cs",
+              "RelativeDocumentMoniker": "Talabat.Core\\Services.Core\\IOrderService.cs",
+              "ToolTip": "D:\\Talabat Project\\Talabat.Solution\\Talabat.Core\\Services.Core\\IOrderService.cs",
+              "RelativeToolTip": "Talabat.Core\\Services.Core\\IOrderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T11:26:47.463Z",
+              "WhenOpened": "2025-06-27T12:11:40.655Z",
               "EditorCaption": ""
             }
           ]
