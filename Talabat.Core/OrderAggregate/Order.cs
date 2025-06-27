@@ -23,10 +23,10 @@ namespace Talabat.Core.OrderAggregate
             SubTotal = subTotal;
         }
 
-        public required string BuyerName { get; set; }
+        public  string BuyerName { get; set; }
         public DateTimeOffset OrderDate { get; set; } = DateTimeOffset.Now;
         public OrderStatus Status { get; set; } = OrderStatus.Pending;
-        public required Address ShippingAddress { get; set; }
+        public Address ShippingAddress { get; set; }
         public DeliveryMethod DeliveryMethod { get; set; }
         public ICollection<OrderItem> Items { get; set; } = new HashSet<OrderItem>();
         public decimal SubTotal { get; set; }

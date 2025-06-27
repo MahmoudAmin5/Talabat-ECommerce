@@ -20,7 +20,7 @@ namespace Talabat.Core.OrderAggregate
         }
 
         public int ProductId { get; set; }
-        public required string ProductName { get; set; }
-        public required string PictureURL { get; set; }
+        public string ProductName { get; set; }
+        public string PictureURL { get; set; }
     }
 }
