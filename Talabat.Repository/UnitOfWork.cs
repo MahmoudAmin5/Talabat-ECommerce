@@ -38,4 +38,5 @@ namespace Talabat.Repository
             return _repositories[type] as GenericRepository<TEntity>;
         }
     }
+
 }
