@@ -16,9 +16,8 @@ namespace Talabat.Repository
         private Hashtable _repositories = new Hashtable();
         private StoreContext _dbcontext;
 
-        public UnitOfWork(Hashtable repositories, StoreContext dbcontext)
+        public UnitOfWork( StoreContext dbcontext)
         {
-            _repositories = repositories;
             _dbcontext = dbcontext;
         }
         public async Task<int> CompleteAsync()

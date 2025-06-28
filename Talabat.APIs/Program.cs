@@ -13,6 +13,7 @@ using Talabat.APIs.DTO;
 using Talabat.APIs.Errors;
 using Talabat.APIs.Helpers;
 using Talabat.APIs.Middleware;
+using Talabat.Core;
 using Talabat.Core.Entities;
 using Talabat.Core.Entities.Identity;
 using Talabat.Core.Repository.Core;
@@ -68,6 +69,8 @@ namespace Talabat.APIs
                 return ConnectionMultiplexer.Connect(connection);
             });
             builder.Services.AddScoped(typeof(IBasketRepository), typeof(BasketRepository));
+            builder.Services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
+            builder.Services.AddScoped(typeof(IOrderService), typeof(OrderService));
             builder.Services.AddScoped(typeof(ITokenService), typeof(TokenService));
             builder.Services.AddIdentity<AppUser, IdentityRole>()
                                    .AddEntityFrameworkStores<AppIdentityDbContext>();

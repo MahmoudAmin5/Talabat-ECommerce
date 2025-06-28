@@ -59,10 +59,11 @@ namespace Talabat.Repository
         public async Task AddAsync(T AddedItem)
         => await _dbcontext.Set<T>().AddAsync(AddedItem);
 
-        public async Task UpdateAsync(T UpdatedItem)
-        =>  _dbcontext.Set<T>().Update(UpdatedItem);
+        public void UpdateAsync(T UpdatedItem)
+        => _dbcontext.Set<T>().Update(UpdatedItem);
 
         public void DeleteAsync(T DeletedItem)
         => _dbcontext.Set<T>().Remove(DeletedItem);
+
     }
 }
