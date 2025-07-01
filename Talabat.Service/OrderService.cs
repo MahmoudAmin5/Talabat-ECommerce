@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -9,6 +10,7 @@ using Talabat.Core.Entities;
 using Talabat.Core.OrderAggregate;
 using Talabat.Core.Repository.Core;
 using Talabat.Core.Services.Core;
+using Talabat.Core.Specifications.OrderSpecs;
 
 namespace Talabat.Service
 {
@@ -57,9 +59,11 @@ namespace Talabat.Service
             throw new NotImplementedException();
         }
 
-        public Task<Order> GetOrdersForSpecificUserAsync(string BuyerEmail)
+        public async Task<IReadOnlyList<Order>> GetOrdersForSpecificUserAsync(string BuyerEmail)
         {
-            throw new NotImplementedException();
+            var spec = new OrderSpecifications(BuyerEmail);
+            var Orders = await _unitOfWork.Repository<Order>().GetAllWithSpecificationAsync(spec);
+            return Orders;
         }
     }
 }
