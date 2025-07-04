@@ -23,7 +23,7 @@ namespace Talabat.Core.OrderAggregate
             SubTotal = subTotal;
         }
 
-        public  string BuyerEmail { get; set; }
+        public string BuyerEmail { get; set; }
         public DateTimeOffset OrderDate { get; set; } = DateTimeOffset.Now;
         public OrderStatus Status { get; set; } = OrderStatus.Pending;
         public Address ShippingAddress { get; set; }
