@@ -6,6 +6,7 @@ using StackExchange.Redis;
 using System.Security.Claims;
 using Talabat.APIs.DTO;
 using Talabat.APIs.Errors;
+using Talabat.Core;
 using Talabat.Core.OrderAggregate;
 using Talabat.Core.Services.Core;
 using Talabat.Service;
@@ -17,11 +18,13 @@ namespace Talabat.APIs.Controllers
     {
         private readonly IOrderService _orderService;
         private readonly IMapper _mapper;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public OrdersController(IOrderService orderService, IMapper mapper)
+        public OrdersController(IOrderService orderService, IMapper mapper, IUnitOfWork unitOfWork)
         {
             _orderService = orderService;
             _mapper = mapper;
+            _unitOfWork = unitOfWork;
         }
         [ProducesResponseType(typeof(Order),statusCode:200)]
         [ProducesResponseType(typeof(ApiResponse), statusCode:400)]
@@ -56,6 +59,12 @@ namespace Talabat.APIs.Controllers
             if (order is null) return NotFound(new ApiResponse(404, $"No Order Found for this id {OrderId}"));
             var MappedOrder = _mapper.Map<Order, OrderToReturnDto>(order);
             return Ok(MappedOrder);
+        }
+        [HttpGet]
+        public async Task<ActionResult<IReadOnlyList<DeliveryMethod>>> GetAllDeliveryMethod()
+        {
+            var DeliveryMethods = await _unitOfWork.Repository<DeliveryMethod>().GetAllAsync();
+            return Ok(DeliveryMethods);
         }
     }
 }
