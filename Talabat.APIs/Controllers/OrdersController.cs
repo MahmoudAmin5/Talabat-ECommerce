@@ -2,12 +2,14 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using StackExchange.Redis;
 using System.Security.Claims;
 using Talabat.APIs.DTO;
 using Talabat.APIs.Errors;
 using Talabat.Core.OrderAggregate;
 using Talabat.Core.Services.Core;
 using Talabat.Service;
+using Order = Talabat.Core.OrderAggregate.Order;
 
 namespace Talabat.APIs.Controllers
 {
@@ -42,7 +44,8 @@ namespace Talabat.APIs.Controllers
             var userEmail = User.FindFirstValue(ClaimTypes.Email);
             var Orders = await _orderService.GetOrdersForSpecificUserAsync(userEmail);
             if (Orders is null) return NotFound(new ApiResponse(404, "No Orders have been made for this user"));
-            return Ok(Orders);
+            var MappedOrders = _mapper.Map<IReadOnlyList<Order>, IReadOnlyList<OrderToReturnDto>>(Orders);
+            return Ok(MappedOrders);
         }
         [HttpGet("{id}")]
         [Authorize]
@@ -51,7 +54,8 @@ namespace Talabat.APIs.Controllers
             var BuyerEmail = User.FindFirstValue(ClaimTypes.Email);
             var order = await _orderService.GetOrdersByIdForSpecificUserAsync(BuyerEmail, OrderId);
             if (order is null) return NotFound(new ApiResponse(404, $"No Order Found for this id {OrderId}"));
-            return Ok(order);
+            var MappedOrder = _mapper.Map<Order, OrderToReturnDto>(order);
+            return Ok(MappedOrder);
         }
     }
 }
