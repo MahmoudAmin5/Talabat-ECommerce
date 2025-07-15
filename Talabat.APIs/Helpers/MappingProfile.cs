@@ -8,7 +8,7 @@ using Talabat.Core.OrderAggregate;
 
 namespace Talabat.APIs.Helpers
 {
-    public class MappingProfile:Profile
+    public class MappingProfile : Profile
     {
         public MappingProfile()
         {
@@ -20,6 +20,14 @@ namespace Talabat.APIs.Helpers
             CreateMap<AddressDto, Core.OrderAggregate.Address>();
             CreateMap<CustomerBasketDto, CustomerBasket>();
             CreateMap<BasketItemDto, BasketItem>();
+            CreateMap<Order, OrderToReturnDto>()
+                .ForMember(d => d.DeliveryMethod, o => o.MapFrom(s => s.DeliveryMethod.ShortName))
+                .ForMember(d => d.DeliveryMethodCost, o => o.MapFrom(s => s.DeliveryMethod.Cost));
+            CreateMap<OrderItem, OrderItemDto>()
+                .ForMember(d => d.ProductId, o => o.MapFrom(s => s.product.ProductId))
+                .ForMember(d => d.ProductName, o => o.MapFrom(s => s.product.ProductName))
+                .ForMember(d => d.PictureURL, o => o.MapFrom(s => s.product.PictureURL));
+
         }
     }
 }
