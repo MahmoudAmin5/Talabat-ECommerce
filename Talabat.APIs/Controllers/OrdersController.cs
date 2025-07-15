@@ -43,7 +43,15 @@ namespace Talabat.APIs.Controllers
             var Orders = await _orderService.GetOrdersForSpecificUserAsync(userEmail);
             if (Orders is null) return NotFound(new ApiResponse(404, "No Orders have been made for this user"));
             return Ok(Orders);
-
+        }
+        [HttpGet("{id}")]
+        [Authorize]
+        public async Task<ActionResult<Order>> GetOrderById(int OrderId)
+        {
+            var BuyerEmail = User.FindFirstValue(ClaimTypes.Email);
+            var order = await _orderService.GetOrdersByIdForSpecificUserAsync(BuyerEmail, OrderId);
+            if (order is null) return NotFound(new ApiResponse(404, $"No Order Found for this id {OrderId}"));
+            return Ok(order);
         }
     }
 }

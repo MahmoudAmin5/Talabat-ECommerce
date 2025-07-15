@@ -54,10 +54,10 @@ namespace Talabat.Service
     
         }
 
-        public Task<Order?> GetOrdersByIdForSpecificUserAsync(string BuyerEmail, int OrderId)
+        public async Task<Order?> GetOrdersByIdForSpecificUserAsync(string BuyerEmail, int OrderId)
         {
             var spec = new OrderSpecifications(BuyerEmail, OrderId);
-            var order = _unitOfWork.Repository<Order>().GetWithSpecificationAsync(spec);
+            var order = await _unitOfWork.Repository<Order>().GetWithSpecificationAsync(spec);
             return order;
 
         }
@@ -68,5 +68,6 @@ namespace Talabat.Service
             var Orders = await _unitOfWork.Repository<Order>().GetAllWithSpecificationAsync(spec);
             return Orders;
         }
+
     }
 }
