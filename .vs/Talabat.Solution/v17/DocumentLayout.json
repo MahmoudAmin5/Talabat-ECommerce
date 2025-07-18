@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\Talabat Project\\Talabat.Solution\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AD7E1FFB-2F2B-41C1-8786-96F1C0050D85}|Talabat.APIs\\Talabat.APIs.csproj|d:\\talabat project\\talabat.solution\\talabat.apis\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD7E1FFB-2F2B-41C1-8786-96F1C0050D85}|Talabat.APIs\\Talabat.APIs.csproj|solutionrelative:talabat.apis\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AD7E1FFB-2F2B-41C1-8786-96F1C0050D85}|Talabat.APIs\\Talabat.APIs.csproj|d:\\talabat project\\talabat.solution\\talabat.apis\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{AD7E1FFB-2F2B-41C1-8786-96F1C0050D85}|Talabat.APIs\\Talabat.APIs.csproj|solutionrelative:talabat.apis\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "OrdersController.cs",
-              "DocumentMoniker": "D:\\Talabat Project\\Talabat.Solution\\Talabat.APIs\\Controllers\\OrdersController.cs",
-              "RelativeDocumentMoniker": "Talabat.APIs\\Controllers\\OrdersController.cs",
-              "ToolTip": "D:\\Talabat Project\\Talabat.Solution\\Talabat.APIs\\Controllers\\OrdersController.cs",
-              "RelativeToolTip": "Talabat.APIs\\Controllers\\OrdersController.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAkwD8AAABdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T16:27:07.755Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Talabat Project\\Talabat.Solution\\Talabat.APIs\\appsettings.json",
+              "RelativeDocumentMoniker": "Talabat.APIs\\appsettings.json",
+              "ToolTip": "D:\\Talabat Project\\Talabat.Solution\\Talabat.APIs\\appsettings.json",
+              "RelativeToolTip": "Talabat.APIs\\appsettings.json",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAACDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-18T06:09:19.665Z",
               "EditorCaption": ""
             }
           ]
