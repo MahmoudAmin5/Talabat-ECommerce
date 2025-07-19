@@ -27,7 +27,7 @@ namespace Talabat.Service
             this._basketRepository = basketRepository;
             this._unitOfWork = unitOfWork;
         }
-        public async Task<CustomerBasket?> CreateOrUpdatePaymentIntent(string BasketId)
+        public async Task<CustomerBasket?> CreateOrUpdatePaymentIntentAsync(string BasketId)
         {
             StripeConfiguration.ApiKey = _configuration["StripeSettings:Secretkey"];
             var Basket = await _basketRepository.GetBasketAsync(BasketId);

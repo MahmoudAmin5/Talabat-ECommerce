@@ -46,6 +46,8 @@ namespace Talabat.APIs
             
             });
             builder.Services.AddScoped(typeof(IGenericRepository<>),typeof (GenericRepository<>));
+            builder.Services.AddScoped(typeof(IPaymentService), typeof(PaymentService));
+
             builder.Services.AddAutoMapper(typeof(MappingProfile));
             builder.Services.Configure<ApiBehaviorOptions>(options =>
             {
