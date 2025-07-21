@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -18,11 +19,14 @@ namespace Talabat.Service
     {
         private readonly IBasketRepository _basketRepository;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IPaymentService _paymentService;
 
-        public OrderService(IBasketRepository basketRepository, IUnitOfWork unitOfWork)
+        public OrderService(IBasketRepository basketRepository, IUnitOfWork unitOfWork, IPaymentService paymentService)
+
         {
             _basketRepository = basketRepository;
             _unitOfWork = unitOfWork;
+            _paymentService = paymentService;
         }
         public async Task<Order?> CreateOrderAsync(string BuyerEmail, string BasketId, int DeliveryMethodId, Address ShippingAddress)
         {
@@ -43,8 +47,15 @@ namespace Talabat.Service
             var SubTotal = OrderItems.Sum(Item => Item.Quantity * Item.Price);
             // Get DeliveryMethod 
             var deliveryMethod = await _unitOfWork.Repository<DeliveryMethod>().GetAsync(DeliveryMethodId);
+            var spec = new OrderWithPaymentIntentIdSpecifications(Basket.PaymentIntentId);
+            var ExOrder = await _unitOfWork.Repository<Order>().GetWithSpecificationAsync(spec);
+            if(ExOrder is not null)
+            {
+                 _unitOfWork.Repository<Order>().DeleteAsync(ExOrder);
+                await _paymentService.CreateOrUpdatePaymentIntentAsync(BasketId);
+            }
             // create Order 
-            var Order = new Order(BuyerEmail, ShippingAddress, deliveryMethod, OrderItems, SubTotal); 
+            var Order = new Order(BuyerEmail, ShippingAddress, deliveryMethod, OrderItems, SubTotal,Basket.PaymentIntentId); 
             // Add Order Locally 
             await _unitOfWork.Repository<Order>().AddAsync(Order);
             //Add to Database
